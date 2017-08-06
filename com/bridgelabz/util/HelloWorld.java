@@ -5,8 +5,7 @@
 * @version: V1.0
 * @since:   6-8-2017
 **********************************************/
-package com.bridgelabz.util; //package defined
-
+package com.bridgelabz.util; 
 public class HelloWorld
 { 
   public static void main(String args[])
