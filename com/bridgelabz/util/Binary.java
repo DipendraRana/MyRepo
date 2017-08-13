@@ -9,12 +9,21 @@
 package com.bridgelabz.util;
 
 public class Binary{
-	public void convertToBinary(int decimalNo){
+	
+	public int[] convertToBinary(int decimalNo){
+
 		int copyOfDecimalNo=decimalNo;
 		int count=0;
 		while(copyOfDecimalNo != 0){
 			copyOfDecimalNo=copyOfDecimalNo/2;
 			count++;
+		}
+		if(32-count!=0){		//checking if binary no is of 4 byte or not
+			int padding=32-count;
+			while(padding!=0){      //if not of 4 byte then padd with 0's to make it 
+				System.out.print(0);	//4 byte
+				padding--;
+			}
 		}
 		int storeBin[]=new int[count];
 		while(decimalNo!=0&&count>=0){
@@ -27,8 +36,11 @@ public class Binary{
 			count++;
 		}
 		System.out.println();
+		return storeBin;
 	}
+
 	public static void main(String args[]){
+
 		int no = Integer.parseInt(args[0]);
 		Binary bin=new Binary();
 		bin.convertToBinary(no);
