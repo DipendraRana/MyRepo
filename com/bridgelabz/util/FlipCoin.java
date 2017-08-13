@@ -11,10 +11,21 @@ package com.bridgelabz.util;
 
 public class FlipCoin {
     public static void main(String args[]){
-        double coin = Math.random();
-        if(coin >= 0.5)
-            System.out.println("It is Head with 50% chance of being Head");
-        else
-            System.out.println("It is Tail with 50% chance of being Tail");
+	int times = Integer.parseInt(args[0]);
+	double coin;
+	int countHead=0,countTail=0;
+	for(int i=0;i<times;i++){
+        	coin = Math.random();
+        	if(coin >= 0.5){
+			countHead++;
+            		System.out.println("Head");
+		}
+        	else{
+			countTail++;
+            		System.out.println("Tail");
+		}
+	}
+	System.out.println("The percentage of Head occurence is "+100*countHead/times+"%");
+	System.out.println("The percentage of Tail occurence is "+100*countTail/times+"%");	    
     }
 }
