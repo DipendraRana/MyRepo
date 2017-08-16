@@ -11,16 +11,20 @@
 package com.bridgelabz.util;
 
 public class CarLoan {
-    public static void main(String args[]){
+
+    public static void emi(int principal, double rate, int year) {
+        int n = 12 * year;
+        double r = rate / (12 * 100);
+
+        double payment = (principal * r) / (1 - Math.pow(1 + r, -n));
+        System.out.println(payment);
+    }
+
+    public static void main(String args[]) {
         int principal = Integer.parseInt(args[0]);
-        double ratePerYear = Double.parseDouble(args[1]);
+        double rate = Double.parseDouble(args[1]);
         int year = Integer.parseInt(args[2]);
 
-        int month = 12 * year;		//year converted to month
-        double ratePerMonth = ratePerYear / (12 * 100);		//rate per annum converted to per month
-
-        double payment = (principal * ratePerMonth) / (1 - Math.pow(1 + ratePerMonth,-month));
-
-        System.out.println(payment);
+        emi(principal, rate, year);
     }
 }

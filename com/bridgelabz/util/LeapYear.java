@@ -10,18 +10,20 @@
 package com.bridgelabz.util;
 
 public class LeapYear {
-    public static void main(String args[]) {
-        int year = Integer.parseInt(args[0]);
-        boolean isLeapYear=(year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
-        if(year >= 1582){
-            if(isLeapYear)
+    public static void georgianCal(int year) {
+        boolean isLeapYear = (((year % 4) == 0) && ((year % 100) != 0) || ((year % 400) == 0));
+        if (year >= 1582) {
+            if (isLeapYear)
                 System.out.println("The Year you entered " + year + " is Leap Year");
             else
                 System.out.println("The Year you entered " + year + " is not Leap Year");
-        }
-        else
+        } else
             System.out.println("The Year entered " + year + " is not corresponding to Gergorian calender");
 
     }
-}
 
+    public static void main(String args[]) {
+        int year = Integer.parseInt(args[0]);
+        georgianCal(year);
+    }
+}

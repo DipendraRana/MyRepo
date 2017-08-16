@@ -12,35 +12,41 @@ package com.bridgelabz.util;
 import java.util.Scanner;
 
 public class Quadratic {
-    public static void main(String args[]){
-        double root1,root2;
 
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter the value of a:");
-        int a = sc.nextInt();
-        System.out.print("Enter the value of b:");
-        int b = sc.nextInt();
-        System.out.print("Enter the vale of c:");
-        int c = sc.nextInt();
+    private static double delta;
 
-        System.out.println("Your Quadratic equation is: " + a + "x^2+" + b + "x+" + c);
+    public static void root(int aValue, int bValue, int cValue) {
+        double root1, root2;
+        System.out.println("Your Quadratic equation is: " + aValue + "x^2+" + bValue + "x+" + cValue);
 
-        int delta = ((b * b) - (4 * a * c));
+        delta = ((bValue * bValue) - (4 * aValue * cValue));
 
-        if(delta > 0){
+        if (delta > 0) {
             System.out.println("There are two real roots");
-            root1 = ((-b + Math.sqrt(delta)) / (2 * a));
-            root2 = ((-b - Math.sqrt(delta)) / (2 * a));
+            root1 = ((-bValue + Math.sqrt(delta)) / (2 * aValue));
+            root2 = ((-bValue - Math.sqrt(delta)) / (2 * aValue));
             System.out.println("Root1 of x=" + root1);
             System.out.println("Root2 of x=" + root2);
-        }
-        else if (delta == 0){
+        } else if (delta == 0) {
             System.out.println("There is one real root");
-            root1 = ((-b + Math.sqrt(delta)) / (2 * a));
+            root1 = ((-bValue + Math.sqrt(delta)) / (2 * aValue));
             System.out.println("Root of x=" + root1);
-        }
-        else {
+        } else {
             System.out.println("There is no real root");
         }
+    }
+
+    public static void main(String args[]) {
+        int aValue, bValue, cValue;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of a:");
+        aValue = sc.nextInt();
+        System.out.print("Enter the value of b:");
+        bValue = sc.nextInt();
+        System.out.print("Enter the vale of c:");
+        cValue = sc.nextInt();
+
+        root(aValue, bValue, cValue);
     }
 }

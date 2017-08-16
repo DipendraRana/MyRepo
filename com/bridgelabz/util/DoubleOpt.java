@@ -10,10 +10,8 @@
 package com.bridgelabz.util;
 
 public class DoubleOpt {
-    public static void main(String args[]){
-        double a = Double.parseDouble(args[0]);
-        double b = Double.parseDouble(args[1]);
-        double c = Double.parseDouble(args[2]);
+
+    public static void operations(double a, double b, double c) {
         double ans;
 
         ans = a + b * c;
@@ -27,5 +25,12 @@ public class DoubleOpt {
 
         ans = a % b + c;
         System.out.println(a + "%" + b + "+" + c + " = " + ans);
+    }
+
+    public static void main(String args[]) {
+        double a = Double.parseDouble(args[0]);
+        double b = Double.parseDouble(args[1]);
+        double c = Double.parseDouble(args[2]);
+        operations(a, b, c);
     }
 }

@@ -4,15 +4,15 @@
  *          angle (in degrees), converts to radians, and then performs various
  *          trigonometric calculations.
  *
- * @author:  Dipendra Rana
+ * @author: Dipendra Rana
  * @version: V1.0
- * @since:   7-8-2017
+ * @since: 7-8-2017
  *********************************************************************************/
 
 package com.bridgelabz.util;
 
 public class Trig {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         double angledeg = Double.parseDouble(args[0]);
         double anglerad = Math.toRadians(angledeg);
 

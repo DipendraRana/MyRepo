@@ -10,10 +10,8 @@
 package com.bridgelabz.util;
 
 public class IntOpt {
-    public static void main(String args[]){
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-        int c = Integer.parseInt(args[2]);
+
+    public static void operation(int a, int b, int c) {
         int ans;
 
         ans = a + b * c;
@@ -27,5 +25,12 @@ public class IntOpt {
 
         ans = a % b + c;
         System.out.println(a + "%" + b + "+" + c + " = " + ans);
+    }
+
+    public static void main(String args[]) {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
+        int c = Integer.parseInt(args[2]);
+        operation(a, b, c);
     }
 }
